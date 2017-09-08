@@ -656,7 +656,11 @@ public final class MediaMetadata implements Parcelable {
                             + " key cannot be used to put a CharSequence");
                 }
             }
-            mBundle.putCharSequence(key, value);
+            
+            if (!METADATA_KEY_ALBUM_ART_URI.equals(key)) {
+                mBundle.putCharSequence(key, value);
+            }
+            
             return this;
         }
 
@@ -698,7 +702,11 @@ public final class MediaMetadata implements Parcelable {
                             + " key cannot be used to put a String");
                 }
             }
-            mBundle.putCharSequence(key, value);
+            
+            if (!METADATA_KEY_ALBUM_ART_URI.equals(key)) {
+                mBundle.putCharSequence(key, value);
+            }
+            
             return this;
         }
 
@@ -778,7 +786,11 @@ public final class MediaMetadata implements Parcelable {
                             + " key cannot be used to put a Bitmap");
                 }
             }
-            mBundle.putParcelable(key, value);
+            
+            if (!METADATA_KEY_ALBUM_ART.equals(key)) {
+                mBundle.putParcelable(key, value);
+            }
+            
             return this;
         }
 
